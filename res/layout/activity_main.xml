@@ -1,55 +1,68 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context=".MainActivity" >
+    android:layout_height="match_parent" >
+                   	
+    <android.support.v4.widget.DrawerLayout
+	    android:id="@+id/drawer_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	    
+	    <!--  Main content view -->
+	    <FrameLayout
+	        android:id="@+id/main_content_frame"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" >
+	
+	        <TextView
+	            android:id="@+id/text_view"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent" />
+	     </FrameLayout>
+	    
+	    <!--  Left Navigation Drawer 
+	   		  * Width should be no more than 320 dp, by standards 
+	     	  * Start is left for left-to-right languages, right for right-to-left languages 
+	    	  * Includes:
+	    	 	 * ListView - holds all other navigable places
+	    	  * android:clickable="true" prevents the drawer from being click through
+	    	 		into the main content view below
+	   	--> 
+	    <RelativeLayout
+	   	    android:id="@+id/nav_drawer"
+	        android:layout_width="240dp"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="start"
+	        android:orientation="vertical"
+	        android:background="@color/background_holo_light" 
+	        android:clickable="true" >
+	        
+			<ListView
+			    android:id="@+id/nav_drawer_list_view"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:choiceMode="singleChoice"
+			    android:divider="@color/transparent"
+			    android:dividerHeight="0dp"
+			    android:background="@color/background_holo_light" >
+			</ListView>
+			    
+		</RelativeLayout>
+		
+	    <!-- Right action/information drawer
+	    	 * android:clickable="true" prevents the drawer from being click through
+	    	 		into the main content view below 
+	    -->   
+	   	<RelativeLayout 
+		    android:id="@+id/action_drawer"
+		    android:layout_width="320dp"
+		    android:layout_height="match_parent"
+		    android:layout_gravity="end"
+		    android:orientation="vertical"
+		    android:background="@color/background_holo_light" 
+		    android:clickable="true" >
+		</RelativeLayout>
+	        
+	</android.support.v4.widget.DrawerLayout>
 
-    <!--
-         The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc.
-    -->
-
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <!--
-         This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows.
-    -->
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true" >
-
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?buttonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent" >
-
-            <Button
-                android:id="@+id/dummy_button"
-                style="?buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
-        </LinearLayout>
-    </FrameLayout>
-
-</FrameLayout>
+</RelativeLayout>
