@@ -1,13 +1,15 @@
 package com.wyrdlabs.classy;
 
-import com.theapakgroup.android.DocumentListFragment;
-import com.theapakgroup.android.R;
+import com.wyrdlabs.classy.R;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -15,11 +17,13 @@ import android.view.View;
  * 
  * @see SystemUiHider
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements DoubleDrawered {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Log.i("MainActivity", "in onCreate()");
 
 		setContentView(R.layout.activity_main);
 
@@ -34,30 +38,28 @@ public class MainActivity extends Activity {
 			  .replace(R.id.main_content_frame, fragment, "timeline")
 			  .commit();
 			
-			getActionBar().setTitle("Timeline");
+			getActionBar().setTitle(TimelineFragment.TITLE);
 		}
-		
-		FragmentManager fm = getFragmentManager();
-		Fragment docFragment = fm.findFragmentByTag("documents");
-		if (docFragment == null) {
-			DocumentListFragment fragment = new DocumentListFragment();
-			
-			fragment.setRetainInstance(true);
-			
-			fm.beginTransaction()
-			  .replace(R.id.main_content_frame, fragment, "documents")
-			  .commit();
-			
-			mCurrentFragment = fragment;
-			getActionBar().setTitle(title);
-
-		
 	}
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 
+	}
+	
+	public ViewGroup getActionDrawer() {
+		return (ViewGroup) findViewById(R.id.action_drawer);
+	}
+
+	@Override
+	public ViewGroup getNavDrawer() {
+		return (ViewGroup) findViewById(R.id.nav_drawer);
+	}
+
+	@Override
+	public DrawerLayout getDrawerLayout() {
+		return (DrawerLayout) findViewById(R.id.drawer_layout);
 	}
 
 }
