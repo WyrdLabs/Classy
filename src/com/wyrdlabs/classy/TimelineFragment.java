@@ -136,14 +136,6 @@ public class TimelineFragment extends ListFragment {
 	
 		switch(item.getItemId()) {
 			case R.id.add:		
-				EditText et = (EditText) mActionDrawer.findViewById(R.id.et);
-				TextView tv = (TextView) mActionDrawer.findViewById(R.id.tv);
-				
-				tv.setText(et.getText());
-				
-				et.setVisibility(View.GONE);
-				tv.setVisibility(View.VISIBLE);
-				
 				Toast.makeText(mActivity, "Add clicked", Toast.LENGTH_SHORT)
 					 .show();
 				break;

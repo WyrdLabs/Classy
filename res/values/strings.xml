@@ -6,5 +6,9 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     
     <string name="add_event">New</string>
+    
+    <string name="event_title">Event title</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
 
 </resources>

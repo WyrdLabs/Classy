@@ -4,7 +4,10 @@
     <color name="black">#ff000000</color>
     <color name="transparent">#00000000</color>
     
-
+    <!-- For settings framework -->
+    <color name="lighter_gray">#ddd</color>
+    <color name="darker_gray">#aaa</color>
+    
     <color name="background_holo_dark">#ff000000</color>
     <color name="background_holo_light">#fff3f3f3</color>
     <color name="bright_foreground_holo_dark">@color/background_holo_light</color>
