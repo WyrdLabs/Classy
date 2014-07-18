@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
+    android:layout_height="wrap_content"
+    android:paddingLeft="2dip"
+    android:paddingRight="2dip"
+    android:textAlignment="center" >
+
+    <TextView
+        android:id="@+id/event_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingRight="4dp"
+        android:text="10/10/2010" />
+
+    <View
+        android:id="@+id/vertical_line"
+        android:layout_width="1dip"
+        android:layout_height="30dip"
+        android:layout_toRightOf="@id/event_date"
+        android:background="@color/black" />
+
     <TextView
         android:id="@+id/event_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:paddingTop="50dp" >
-    </TextView>
-    
+        android:layout_toRightOf="@id/vertical_line"
+        android:paddingLeft="4dp" />
 
-</LinearLayout>
+    <TextView 
+        android:id="@+id/event_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/event_title"
+        android:paddingLeft="4dp" 
+        android:text="98"/>
+
+</RelativeLayout>
