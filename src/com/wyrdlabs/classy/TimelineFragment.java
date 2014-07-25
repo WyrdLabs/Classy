@@ -2,6 +2,7 @@ package com.wyrdlabs.classy;
 
 import java.util.ArrayList;
 
+import android.R.menu;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
@@ -128,12 +129,12 @@ public class TimelineFragment extends ListFragment {
 	@Override
 	public void onPrepareOptionsMenu(Menu menu) {
 		Log.i("TimelineFragment", "in onPrepareOptionsMenu()");
+		
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Log.i("TimelineFragment", "in onOptionsItemSelected()");
-	
 		switch(item.getItemId()) {
 			case R.id.add:		
 				Toast.makeText(mActivity, "Add clicked", Toast.LENGTH_SHORT)

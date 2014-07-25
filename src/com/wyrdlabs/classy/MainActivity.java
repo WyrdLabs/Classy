@@ -50,7 +50,7 @@ public class MainActivity extends Activity implements DoubleDrawered {
 	
 	public ViewGroup getActionDrawer() {
 		return (ViewGroup) findViewById(R.id.action_drawer);
-	}
+	}	
 
 	@Override
 	public ViewGroup getNavDrawer() {
