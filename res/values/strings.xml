@@ -9,5 +9,9 @@
     <string name="event_title">Event title</string>
     <string name="category">Category</string>
     <string name="date">Date</string>
-
+        
+    <!-- Used in DrawerToggle -->
+    <string name="drawer_open">drawerOpen</string>
+    <string name="drawer_close">drawerClose</string>
+    
 </resources>
