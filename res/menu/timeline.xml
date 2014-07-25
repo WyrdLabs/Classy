@@ -6,23 +6,23 @@
         android:icon="@drawable/icon_add"
         android:menuCategory="system"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom"
+        android:showAsAction="ifRoom|withText"
         android:title="@string/add_event"/>
     <item
         android:id="@+id/edit"
         android:icon="@drawable/ic_action_edit"
-        android:visible="false"    
         android:menuCategory="alternative"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom"
-        android:title="@string/edit_event"/>
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/edit_event"
+        android:visible="false"/>
     <item
         android:id="@+id/delete"
         android:icon="@drawable/ic_action_delete"
-        android:visible="true"
         android:menuCategory="alternative"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom"
-        android:title="@string/delete_event"/>
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/delete_event"
+        android:visible="false"/>
 
 </menu>
