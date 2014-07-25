@@ -19,7 +19,7 @@
     <item
         android:id="@+id/delete"
         android:icon="@drawable/ic_action_delete"
-        android:visible="false"
+        android:visible="true"
         android:menuCategory="alternative"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
