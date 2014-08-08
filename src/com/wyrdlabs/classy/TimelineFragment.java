@@ -2,7 +2,6 @@ package com.wyrdlabs.classy;
 
 import java.util.ArrayList;
 
-import android.R.menu;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
@@ -14,8 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -115,7 +115,7 @@ public class TimelineFragment extends ListFragment {
 				.getActionDrawer();
 		actionDrawerViewGroup.removeAllViews();
 
-		mActionDrawer = inflater.inflate(R.layout.timeline_action_drawer,
+		mActionDrawer = inflater.inflate(R.layout.timeline_action_drawer_editable,
 				actionDrawerViewGroup);
 
 	}
@@ -168,4 +168,41 @@ public class TimelineFragment extends ListFragment {
 		return true;
 	}
 
+	@Override
+	public void onListItemClick(ListView list, View v, int pos, long id) {
+
+		String thingClicked = (String) list.getItemAtPosition(pos);
+		
+		//Get action drawer
+		setActionDrawer(R.layout.timeline_action_drawer_uneditable);
+		ViewGroup actionDrawer = mDoubleDrawer.getActionDrawer();
+		
+		LayoutInflater inflater = mActivity.getLayoutInflater();
+		actionDrawer.removeAllViews();
+
+		mActionDrawer = inflater.inflate(
+				R.layout.timeline_action_drawer_uneditable, 
+				actionDrawer);
+		
+		TextView title = (TextView) mActionDrawer.findViewById(R.id.title_entry);
+		title.setText(thingClicked);
+		 
+		TextView category = (TextView) mActionDrawer.findViewById(R.id.category_entry);
+		category.setText("hard coded category");
+		
+		TextView date_button = (TextView) mActionDrawer.findViewById(R.id.date_button);
+		date_button.setText("hard coded date");
+				
+		//open drawer
+		mDoubleDrawer.getDrawerLayout().openDrawer(actionDrawer);
+	}
+	
+	private void setActionDrawer(int layoutId) {
+		ViewGroup actionDrawer = mDoubleDrawer.getActionDrawer();
+		
+		LayoutInflater inflater = mActivity.getLayoutInflater();
+		actionDrawer.removeAllViews();
+
+		mActionDrawer = inflater.inflate(layoutId, actionDrawer);
+	}
 }

@@ -120,5 +120,7 @@ public class MainActivity extends Activity implements DoubleDrawered {
 	public boolean isActionDrawerOpen() {
 		return mDrawerLayout.isDrawerOpen(mActionDrawer);
 	}
+	
+
 
 }
