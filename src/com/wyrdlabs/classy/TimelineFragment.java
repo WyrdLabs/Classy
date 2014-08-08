@@ -115,7 +115,7 @@ public class TimelineFragment extends ListFragment {
 				.getActionDrawer();
 		actionDrawerViewGroup.removeAllViews();
 
-		mActionDrawer = inflater.inflate(R.layout.timeline_action_drawer_editable,
+		mActionDrawer = inflater.inflate(R.layout.timeline_action_drawer_uneditable,
 				actionDrawerViewGroup);
 
 	}
