@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/edittext_styled_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="12dp"
+        android:paddingTop="7dp"
+        android:text="BoogaBoogaBoo"
+        android:textSize="12dp"
+        android:visibility="gone" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/title_label_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title_label"
+            style="@style/EntryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event_title" />
+
+        <TextView
+            android:id="@+id/title_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:text="Title Text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/category_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/title_label_wrapper"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/category_label"
+            style="@style/EntryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category" />
+
+        <TextView
+            android:id="@+id/category_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:text="@string/category" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/date_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/category_wrapper"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/date_label"
+            style="@style/EntryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/date_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:singleLine="true"
+            android:text="DateButton" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
