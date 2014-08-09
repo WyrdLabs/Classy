@@ -204,5 +204,6 @@ public class TimelineFragment extends ListFragment {
 		actionDrawer.removeAllViews();
 
 		mActionDrawer = inflater.inflate(layoutId, actionDrawer);
+		mActionDrawer = inflater.inflate(layoutId, actionDrawer);
 	}
 }
